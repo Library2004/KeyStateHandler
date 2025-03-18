@@ -3,9 +3,9 @@
 
 void KeyStateHandler::update(int key, int clk)
 {
-    if (clk != clock) {
+    if (clk != clock[key]) {
         previousState[key] = currentState[key];
-        clock = clk;
+        clock[key] = clk;
     }
     currentState[key] = GetKeyState(key);
 }

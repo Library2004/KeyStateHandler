@@ -1,7 +1,7 @@
 #pragma once
 class KeyStateHandler
 {
-	int clock;
+	int clock[256];
 	short previousState[256];// 0:up, 1:down
     short currentState[256];
 
@@ -10,8 +10,8 @@ class KeyStateHandler
 public:
 	KeyStateHandler()
 	{
-		clock = 0;
 		for (int i = 0; i < 256; i++) {
+			clock[i] = 0;
             previousState[i] = currentState[i] = 0;
 		}
 	}
