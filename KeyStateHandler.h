@@ -1,4 +1,6 @@
 #pragma once
+#include<vector>
+using std::vector;
 class KeyStateHandler
 {
 	int clock[256];
@@ -20,5 +22,9 @@ public:
 	bool clickedUp(int key, int clk);
 	bool pressing(int key, int clk);
 	bool clickedDownOrUp(int key, int clk);
+
+	bool pressingAnyOf(vector<int> keys, int clk);
+	bool pressingAllOf(vector<int> keys, int clk);
+	bool clickedDownAnyOf(vector<int> keys, int clk);
 };
 
